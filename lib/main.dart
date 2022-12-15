@@ -11,6 +11,7 @@ import 'package:provider_apps/utils/routes/routes.dart';
 import 'package:provider_apps/utils/routes/routes_name.dart';
 import 'package:provider_apps/view/login_screen.dart';
 import 'package:provider_apps/view_model/auth_view_model.dart';
+import 'package:provider_apps/view_model/user_view_model.dart';
 import 'screen/myhomePage.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
     ChangeNotifierProvider(create: (_) => AuthProvider()),
     /// Provider End Learning
     ChangeNotifierProvider(create: (_) => AuthViewModel()),
+    ChangeNotifierProvider(create: (_) => UserViewModel()),
     ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home:  const LoginScreen(),
-        initialRoute: RoutesName.login,
+        initialRoute: RoutesName.splash,
        onGenerateRoute: Routes.generateRoute,
       ),
     );

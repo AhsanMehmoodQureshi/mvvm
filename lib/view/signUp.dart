@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_apps/view/login_screen.dart';
 
 import '../resource/components/round_button.dart';
+import '../utils/routes/routes_name.dart';
 import '../utils/utils.dart';
 import '../view_model/auth_view_model.dart';
 
@@ -91,7 +93,15 @@ class _SignUpState extends State<SignUp> {
                       };
                       authViewModel.signUpApi(data,context);
                     }
-                  })
+                  }),
+              const SizedBox(height: 30,),
+              TextButton(onPressed: (){
+               /* Navigator. pushAndRemoveUntil<dynamic>(
+                  context, MaterialPageRoute<dynamic>(
+                    builder: (BuildContext context) => const LoginScreen(),),
+                      (route) => false,);*/
+                Navigator.pushNamed(context, RoutesName.login);
+              }, child: const Text('SignIn',style: TextStyle(decoration: TextDecoration.underline),))
             ],
           ),
         )
