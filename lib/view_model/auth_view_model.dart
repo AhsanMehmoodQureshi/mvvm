@@ -4,6 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:provider_apps/repository/auth_repository.dart';
 import 'package:provider_apps/utils/routes/routes_name.dart';
 import 'package:provider_apps/utils/utils.dart';
+import 'package:provider_apps/view_model/user_view_model.dart';
+
+import '../model/user_model.dart';
 
 class AuthViewModel with ChangeNotifier{
   final _myRepo=AuthRepository();
@@ -21,6 +24,7 @@ class AuthViewModel with ChangeNotifier{
     _signUpLoading=value;
     notifyListeners();
   }
+
   Future<void> loginApi(dynamic data ,BuildContext context) async{
     setLoading(true);
     _myRepo.loginApi(data).then((value) {

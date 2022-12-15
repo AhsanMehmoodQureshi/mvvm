@@ -7,7 +7,9 @@ import 'package:provider_apps/resource/components/round_button.dart';
 import 'package:provider_apps/utils/routes/routes_name.dart';
 import 'package:provider_apps/view_model/auth_view_model.dart';
 
+import '../model/user_model.dart';
 import '../utils/utils.dart';
+import '../view_model/user_view_model.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -87,6 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
               }
               else{
                // Utils.toast('Data Entered Successfully');
+
                 Map data={
                   'email':_emailController.value.text,
                   'password':_passwordController.value.text,
@@ -97,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 30,),
             TextButton(onPressed: (){
               Navigator.pushNamed(context, RoutesName.signUp);
-            }, child: Text('SignUp',style: TextStyle(decoration: TextDecoration.underline),))
+            }, child: const Text('SignUp',style: TextStyle(decoration: TextDecoration.underline),))
           ],
         ),
       )

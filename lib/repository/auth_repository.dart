@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:http/http.dart';
 import 'package:provider_apps/data/network/BaseApiServices.dart';
 import 'package:provider_apps/data/network/NetworkApiServices.dart';
@@ -11,18 +13,8 @@ class AuthRepository{
     try{
       dynamic response=await baseApiServices.getPostApiResponse(ApiUrl.loginUrl, data);
       return response;
-     //  Response response= await post(
-     //      Uri.parse(ApiUrl.loginUrl),
-     //      body: 'data'"56656"
-     //  ).timeout(const Duration(seconds: 10));
-     //  var data=response;
-     //  if(data.statusCode==200){
-     //    return data;
-     //  }
-     // else if(data.statusCode==400){
-     //    return data;
-     //  }
-    }catch(e){
+
+    } catch(e){
       throw e;
     }
   }
@@ -36,3 +28,14 @@ class AuthRepository{
     }
   }
 }
+//  Response response= await post(
+//      Uri.parse(ApiUrl.loginUrl),
+//      body: 'data'"56656"
+//  ).timeout(const Duration(seconds: 10));
+//  var data=response;
+//  if(data.statusCode==200){
+//    return data;
+//  }
+// else if(data.statusCode==400){
+//    return data;
+//  }
